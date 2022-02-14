@@ -1,0 +1,61 @@
+<html>
+
+    <head>
+        <title>My Local HTML File</title>
+    </head>
+
+    <body>
+        <h1 id="title">Hello World!</h1>
+        <script type="text/javascript">
+            function fromFlutter(newTitle) {
+
+
+            //     document.getElementById("title").innerHTML = newTitle;
+            //     sendBack();
+            //  }
+
+            //  function sendBack() {
+            //     messageHandler.postMessage("Hello from JS");
+            let windowName = 'w_' + Date.now() + Math.floor(Math.random() * 100000).toString();
+                var form = document.createElement("form");
+                form.setAttribute("method", "POST");
+                form.setAttribute("action", "https://bexwal.wa.bwx.walbex.com/api/process/stripe/create-checkout-session");
+
+              //  form.setAttribute("target", windowName);
+
+                var skucode = document.createElement("input");
+                skucode.setAttribute("type", "hidden");
+                skucode.setAttribute("name", "SkuCode");
+                skucode.setAttribute("value", "BHETET55310");
+                form.appendChild(skucode)
+
+                var SendValue = document.createElement("input");
+                SendValue.setAttribute("type", "hidden");
+                SendValue.setAttribute("name", "SendValue");
+                SendValue.setAttribute("value", "20");
+                form.appendChild(SendValue)
+
+                var ChargeValue = document.createElement("input");
+                ChargeValue.setAttribute("type", "hidden");
+                ChargeValue.setAttribute("name", "ChargeValue");
+                ChargeValue.setAttribute("value","20.8");
+                form.appendChild(ChargeValue)
+
+                var SendCurrencyIso = document.createElement("input");
+                SendCurrencyIso.setAttribute("type", "hidden");
+                SendCurrencyIso.setAttribute("name", "SendCurrencyIso");
+                SendCurrencyIso.setAttribute("value", "USD");
+                form.appendChild(SendCurrencyIso)
+
+                var AccountNumber = document.createElement("input");
+                AccountNumber.setAttribute("type", "hidden");
+                AccountNumber.setAttribute("name", "AccountNumber");
+                AccountNumber.setAttribute("value", "123456789");
+                form.appendChild(AccountNumber)
+                document.body.appendChild(form);
+                form.submit();
+            
+             }
+        </script>
+    </body>
+</html>
